@@ -62,7 +62,7 @@ Currently `md5` is used as the hash function and is seeded with different values
 
 For more info on Bloom filters, you can read these excellent resources:
 
-* [Ilya Grigorik's Bloom Filters in Redis](http://www.igvita.com/2008/12/27/scalable-datasets-bloom-filters-in-ruby/)
+* [Ilya Grigorik's Bloom Filters in Ruby](http://www.igvita.com/2008/12/27/scalable-datasets-bloom-filters-in-ruby/)
 * [Wikipedia](http://en.wikipedia.org/wiki/Bloom_filter)
 
 
