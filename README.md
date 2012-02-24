@@ -36,7 +36,7 @@ You may also pass in the client to the filter explicitly
 
 Filters take the following options:
 
-* **client** - required redis client instance from call to `connect` or explicit pass
+* **client** - redis client instance from call to `connect` or explicit pass
 * **size** - size of the bloom filter in bits.
 * **numHashes** - number of hash functions to use
 * **key** - redis key to store at
@@ -52,7 +52,7 @@ Filters take the following options:
 
 #### Clearing a filter
 
-    filter.clear();
+    filter.clear([callback]);
 
 
 Additional Info
@@ -61,8 +61,9 @@ Additional Info
 Currently `md5` is used as the hash function and is seeded with different values. It has good collision resistancy against a random dataset. However, it generates far more bits than we actually need, and may not be as fast as other hash functions.
 
 For more info on Bloom filters, you can read these excellent resources:
-[Ilya Grigorik's Bloom Filters in Redis](http://www.igvita.com/2008/12/27/scalable-datasets-bloom-filters-in-ruby/)
-[Wikipedia](http://en.wikipedia.org/wiki/Bloom_filter)
+
+* [Ilya Grigorik's Bloom Filters in Redis](http://www.igvita.com/2008/12/27/scalable-datasets-bloom-filters-in-ruby/)
+* [Wikipedia](http://en.wikipedia.org/wiki/Bloom_filter)
 
 
 
