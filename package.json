@@ -1,0 +1,22 @@
+{
+    "name": "bloom-redis"
+  , "version": "0.0.1"
+  , "description": "a simple redis-backed bloom-filter"
+  , "keywords": ["bloom", "filter", "redis", "bloom-filter"]
+  , "author": "Calvin French-Owen <calvin@segment.io>"
+  , "repository": { "type": "git"
+                  , "url": "git@github.com:segmentio/bloom-redis.git" }
+  , "main": "index"
+  , "engines": { "node": ">= 0.4.x < 0.8.0" }
+  , "scripts": {
+    "test": "find test -type f | xargs mocha -R spec -t 5000"
+  }
+  , "dependencies" :{
+    "redis": "*"
+  }
+  , "devDependencies": {
+      "should": "*"
+    , "mocha": "*"
+    , "underscore": "*"
+  }
+}
