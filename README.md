@@ -12,7 +12,7 @@ To install, use npm and run `npm install bloom-redis`.
 Usage
 -----
 
-**** Creating a filter
+#### Creating a filter
 
 Like mongoose, bloom-redis allows you to specify a single redis client for your filters to connect to. Alternatively, you can give a client to each filter instance.
 
@@ -37,10 +37,33 @@ You may also pass in the client to the filter explicitly
 Filters take the following options:
 
 * **client** - required redis client instance from call to `connect` or explicit pass
+* **size** - size of the bloom filter in bits.
+* **numHashes** - number of hash functions to use
+* **key** - redis key to store at
+
+
+#### Adding an element to the filter
+
+    filter.add(string, [callback]);
+
+#### Checking for membership
+
+    filter.contains(string, callback);
+
+#### Clearing a filter
+
+    filter.clear();
+
+
+Additional Info
+===============
+
+Currently `md5` is used as the hash function and is seeded with different values. It has good collision resistancy against a random dataset. However, it generates far more bits than we actually need, and may not be as fast as other hash functions.
+
+For more info on Bloom filters, you can read these excellent resources:
+[Ilya Grigorik's Bloom Filters in Redis](http://www.igvita.com/2008/12/27/scalable-datasets-bloom-filters-in-ruby/)
+[Wikipedia](http://en.wikipedia.org/wiki/Bloom_filter)
 
 
 
 
-
-
-First you must create a `BloomFilter`.
